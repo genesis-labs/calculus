@@ -1,11 +1,8 @@
 import {combineReducers} from 'redux';
-
-const s = (state={
-    id: 1
-}, action) => state;
+import indexReducer from '../../frameworkExamples/vanillaJS/reducers/IndexReducer';
 
 const rootReducer = combineReducers({
-    s
+    indexReducer
 });
 
 export default rootReducer;

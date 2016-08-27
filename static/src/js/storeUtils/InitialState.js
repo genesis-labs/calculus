@@ -1,8 +1,8 @@
 import {Map} from 'immutable';
 
 const initialState = {
-    s: {
-        id: 1
+    indexReducer: {
+        data: 'hi1'
     }
 };
 

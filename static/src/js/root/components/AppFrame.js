@@ -6,18 +6,18 @@ import MapComponent from '../../../frameworkExamples/angularBullshit/MapComponen
 
 class AppFrame extends Component{
     render(){
-
         return (
             <div>
                 <h1>SMK ARS</h1>
-                {/*<VisualizationComponent component={IndexComponent} />*/}
-                <VisualizationComponent component={MapComponent} />
+                <VisualizationComponent component={IndexComponent} {...this.props} />
+                {/*<VisualizationComponent component={MapComponent} {...this.props} />*/}
             </div>
         )}
 }
 
 const mapStateToProps = (state) => {
     return {
+        indexReducer: state.indexReducer
     }
 };
 
@@ -27,4 +27,4 @@ const mapDispatchToProps = (dispatch) => {
 };
 
 
-export default connect(mapStateToProps, mapDispatchToProps)(AppFrame);
+export default connect(mapStateToProps)(AppFrame);
