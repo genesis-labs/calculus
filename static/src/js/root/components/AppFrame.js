@@ -5,14 +5,10 @@ class AppFrame extends Component{
     render(){
         return (
             <div>
-                {this.props.children}
+                <h1>Tal</h1>
             </div>
         )}
 }
-
-AppFrame.propTypes = {
-    children: PropTypes.object.isRequired,
-};
 
 const mapStateToProps = (state) => {
     return {

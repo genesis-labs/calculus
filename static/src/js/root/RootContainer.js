@@ -1,4 +1,4 @@
-import {PropTypes, Component} from 'react';
+import React, {PropTypes, Component} from 'react';
 import {Provider} from 'react-redux';
 import AppFrame from './components/AppFrame';
 import InitialState from '../storeUtils/InitialState';
