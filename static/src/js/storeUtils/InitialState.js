@@ -1,5 +1,3 @@
-import {Map} from 'immutable';
-
 const initialState = {
     indexReducer: {
         data: 'hi1'

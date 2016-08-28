@@ -8,7 +8,7 @@ class AppFrame extends Component{
     render(){
         return (
             <div>
-                <h1>SMK ARS</h1>
+                <h1>sdfgsdfgsdfg</h1>
                 <VisualizationComponent component={IndexComponent} {...this.props} />
                 {/*<VisualizationComponent component={MapComponent} {...this.props} />*/}
             </div>

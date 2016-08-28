@@ -1,20 +1,20 @@
 import React, {Component} from 'react';
 
-export default class VisualizationComponent extends Component {
+class VisualizationComponent extends Component {
     constructor(props) {
         super(props);
         this.state = props;
+        this.componentDiv = this._createComponentNode();
+    }
 
+    _createComponentNode(){
         let componentDiv = document.createElement('div');
-        componentDiv.id = 'component-div-1';
         document.getElementById('calculus').appendChild(componentDiv);
-        this.componentDiv = componentDiv;
+        return componentDiv;
     }
 
     render() {
-        console.log('rendering visualization component');
-        console.log(this.props);
-        let component = new this.props.component({props: this.props, componentDiv: this.componentDiv});
+        let component = new this.props.component({props:this.props, componentDiv: this.componentDiv});
         component.render();
 
         return (
@@ -22,3 +22,5 @@ export default class VisualizationComponent extends Component {
         )
     }
 }
+
+export default VisualizationComponent;

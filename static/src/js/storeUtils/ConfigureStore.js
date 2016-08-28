@@ -1,18 +1,18 @@
-import { createStore, applyMiddleware, compose } from 'redux';
+import { createStore, compose } from 'redux';
 import DevTools from '../root/components/DevTools';
 import rootReducer from '../root/RootReducer';
-//
-// const enhancer = compose(
-// //     // Middleware you want to use in development:
-// //     applyMiddleware(thunkMiddleware, multi),
-// //     // Required! Enable Redux DevTools with the monitors you chose
-//     DevTools.instrument()
-// );
+
+const enhancer = compose(
+    DevTools.instrument()
+);
 
 export default function configureStore(initialState) {
-    return createStore(
-        rootReducer,
-        initialState,
-        DevTools.instrument()
-    )
+
+    const store = createStore(rootReducer, initialState, enhancer);
+    if (module.hot){
+        module.hot.accept('../root/RootReducer', () => {
+            store.replaceReducer(require('../root/RootReducer').default)
+        });
+    }
+    return store;
 }
