@@ -1,31 +1,34 @@
 import React, {Component, PropTypes} from 'react';
 import { connect } from 'react-redux';
-import MapComponent from './MapComponent';
+import VisualizationComponent from '../../framework/VisualizationComponent';
 
 
-class MapContainer extends Component{
+class VisualizationContainer extends Component{
     constructor(props){
         super(props);
-        this.data = {
-            type:'map',
-            report: 'x',
-            data:[{lat:1, lng:2}],
-            activeCoordinate:1
-        };
+        this.componentState = {};
+    }
+
+    componentWillMount(){
+        this.componentState = this.props.componentState;
     }
 
     shouldComponentUpdate (nextProps) {
-        return nextProps.newData.type == this.data.type && nextProps.newData.report === this.data.report;
+        console.log(nextProps);
+        return nextProps.newData.componentTypes.includes(this.componentState.componentType) && nextProps.newData.report === this.componentState.report;
     }
 
-    componentWillUpdate(){
-        this.data = this.props.mapData
+    componentWillUpdate(nextProps){
+        console.log(nextProps.newData);
+        this.componentState.data = Object.assign(this.componentState.data, nextProps.newData.data)
     }
+
+
 
     render(){
         return (
-            <VisualizationComponent component={MapComponent}
-                                    initialState={this.data}
+            <VisualizationComponent component={this.props.component}
+                                    componentState={this.componentState}
                                     dispatch={this.props.dispatch}
             />
         )
@@ -34,11 +37,11 @@ class MapContainer extends Component{
 
 const mapStateToProps = (state) => {
     return {
-        newData: state.newData
+        newData: state.indexReducer.newData
     }
 };
 
 
 
-export default connect(mapStateToProps)(MapContainer);
+export default connect(mapStateToProps)(VisualizationContainer);
 

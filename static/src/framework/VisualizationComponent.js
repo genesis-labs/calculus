@@ -1,4 +1,6 @@
 import React, {Component} from 'react';
+// import { connect } from 'react-redux';
+
 
 class VisualizationComponent extends Component {
     constructor(props) {
@@ -14,7 +16,7 @@ class VisualizationComponent extends Component {
     }
 
     render() {
-        let component = new this.props.component({props:this.props, componentDiv: this.componentDiv});
+        let component = new this.props.component({...this.props, componentDiv: this.componentDiv});
         component.render();
 
         return (
@@ -22,5 +24,11 @@ class VisualizationComponent extends Component {
         )
     }
 }
+//
+// const mapStateToProps = (state, ownProps) => {
+//     let stateData = {};
+//     stateData['state'] = state[ownProps.component.name + 'Reducer'];
+//     return stateData;
+// };
 
 export default VisualizationComponent;

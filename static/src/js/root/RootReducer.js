@@ -1,8 +1,7 @@
-import {combineReducers} from 'redux';
-import indexReducer from '../../frameworkExamples/vanillaJS/reducers/IndexReducer';
-
-const rootReducer = combineReducers({
-    indexReducer
-});
-
-export default rootReducer;
+// import {combineReducers} from 'redux';
+//
+// export default function createReducer(asyncReducers) {
+//     return combineReducers({
+//         ...asyncReducers
+//     });
+// }

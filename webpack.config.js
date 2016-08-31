@@ -4,8 +4,8 @@ var webpack = require('webpack');
 var ROOT_PATH = path.resolve(__dirname, 'static');
 module.exports = {
     entry: [
-        'webpack-dev-server/client?http://localhost:3000',
-        'webpack/hot/only-dev-server',
+        // 'webpack-dev-server/client?http://localhost:3000',
+        // 'webpack/hot/only-dev-server',
         path.resolve(ROOT_PATH, 'src/index')
     ],
     output: {
@@ -21,7 +21,7 @@ module.exports = {
         }]
     },
     plugins: [
-        new webpack.HotModuleReplacementPlugin()
+        // new webpack.HotModuleReplacementPlugin()
     ]
 
 };
