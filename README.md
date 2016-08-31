@@ -3,11 +3,11 @@ Visualisation For Humans. By Humans.
 
 # Usage
 ```js
-var container = require('./Container');
 var component = require('./Component');
 var reducer = require('./Reducer');
+var initialState = require('./InitialState');
 
-var calculusContainer = new Calculus(container, component, reducer);
+var calculusContainer = new Calculus(component, reducer, initialState);
 calculusContainer.render();
 ```
 
