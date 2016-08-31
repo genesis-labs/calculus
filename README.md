@@ -3,14 +3,12 @@ Visualisation For Humans. By Humans.
 
 # Usage
 ```js
-var express = require('express')
-var app = express()
+var container = require('./Container');
+var component = require('./Component');
+var reducer = require('./Reducer');
 
-app.get('/', function (req, res) {
-  res.send('Hello World')
-})
-
-app.listen(3000)
+var calculusContainer = new Calculus(container, component, reducer);
+calculusContainer.render();
 ```
 
 ## Installation
