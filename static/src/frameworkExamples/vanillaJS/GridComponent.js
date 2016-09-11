@@ -1,8 +1,10 @@
 class GridComponent {
-    constructor(props) {
+    constructor(state,props) {
         this.props = props;
 
     }
+
+    //dtor
 
     render(state) {
         let calcDiv = document.getElementById('calculus');
