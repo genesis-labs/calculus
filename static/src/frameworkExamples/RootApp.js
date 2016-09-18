@@ -5,11 +5,6 @@ import gridReducer from  '../frameworkExamples/vanillaJS/GridReducer'
 
 
 class RootApp{
-
-    constructor(){
-        this.start = this.start.bind(this);
-    }
-
     start(){
         let calculus = new Calculus(MapComponent, gridReducer);
         calculus.render();
